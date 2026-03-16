@@ -66,3 +66,76 @@
   gap: 20px;
   text-align: left;
 }
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+    padding: 50px 20px;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+
+  .text {
+    font-size: 17px;
+  }
+
+  .heroesList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 16px;
+  }
+
+  .heading {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .text {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 280px;
+    padding: 13px 20px;
+    font-size: 15px;
+  }
+
+  .heroesList {
+    margin-top: 28px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 32px 14px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+  .button {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+
+  .heroesList {
+    margin-top: 24px;
+  }
+}

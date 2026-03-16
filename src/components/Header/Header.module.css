@@ -18,3 +18,19 @@
   text-align: center;
   color: #ffffff;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 22px;
+  }
+}

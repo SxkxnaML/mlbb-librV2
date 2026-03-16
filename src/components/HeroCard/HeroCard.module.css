@@ -57,3 +57,45 @@
   background-color: rgba(250, 204, 21, 0.18);
   border: 1px solid rgba(250, 204, 21, 0.35);
 }
+
+@media (max-width: 768px) {
+  .heroImage {
+    height: 200px;
+  }
+
+  .heroContent {
+    padding: 16px;
+  }
+
+  .heroName {
+    font-size: 20px;
+  }
+
+  .heroRole {
+    font-size: 14px;
+  }
+
+  .heroLane {
+    font-size: 12px;
+    padding: 5px 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroImage {
+    height: 180px;
+  }
+
+  .heroContent {
+    padding: 14px;
+  }
+
+  .heroName {
+    font-size: 18px;
+  }
+
+  .heroRole {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+}

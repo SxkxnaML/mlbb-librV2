@@ -14,3 +14,13 @@
   font-size: 14px;
   color: #94a3b8;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+}
