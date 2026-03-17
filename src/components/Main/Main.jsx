@@ -6,9 +6,15 @@ import HeroCard from '../HeroCard/HeroCard.jsx'
 export default function Main() {
   const [showHeroesList, setShowHeroesList] = useState(false)
 
+  const [heroSearch, setHeroSearch] = useState('')
+
   const handleToggleHeroesList = () => {
     setShowHeroesList((prevShowHeroesList) => !prevShowHeroesList)
   }
+
+  const filteredHeroes = heroes.filter((el) =>
+    el.name.toLowerCase().includes(heroSearch.toLowerCase()),
+  )
 
   return (
     <main className={styles.main}>
@@ -21,8 +27,18 @@ export default function Main() {
         </button>
 
         {showHeroesList && (
+          <input
+            className={styles.input}
+            type="text"
+            placeholder="Введите имя героя"
+            value={heroSearch}
+            onChange={(e) => setHeroSearch(e.target.value)}
+          />
+        )}
+
+        {showHeroesList && (
           <div className={styles.heroesList}>
-            {heroes.map((el) => (
+            {filteredHeroes.map((el) => (
               <HeroCard
                 name={el.name}
                 role={el.role}

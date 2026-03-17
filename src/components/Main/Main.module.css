@@ -62,10 +62,49 @@
 .heroesList {
   margin-top: 36px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center;
   gap: 20px;
   text-align: left;
 }
+
+.input {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 24px auto 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #f8fafc;
+  background-color: rgba(255, 255, 255, 0.08);
+  outline: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:hover {
+  border-color: rgba(250, 204, 21, 0.45);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.input:focus {
+  border-color: #facc15;
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 0 4px rgba(250, 204, 21, 0.18),
+    0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 1024px) {
   .container {
     max-width: 900px;
@@ -81,7 +120,8 @@
   }
 
   .heroesList {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+    justify-content: center;
     gap: 18px;
   }
 }
@@ -111,8 +151,15 @@
 
   .heroesList {
     margin-top: 28px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(260px, 320px);
+    justify-content: center;
     gap: 16px;
+  }
+  .input {
+    max-width: 100%;
+    margin-top: 20px;
+    padding: 13px 16px;
+    font-size: 15px;
   }
 }
 
@@ -137,5 +184,12 @@
 
   .heroesList {
     margin-top: 24px;
+    grid-template-columns: 1fr;
+  }
+  .input {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 14px;
   }
 }
