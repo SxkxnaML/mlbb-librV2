@@ -19,8 +19,11 @@ export default function Main() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>Всем привет!</h2>
-        <p className={styles.text}>Здесь будет моя библиотека героев MLBB!</p>
+        <h2 className={styles.heading}>Добро пожаловать!</h2>
+        <p className={styles.text}>
+          Познакомься с героями <strong>Mobile Legends</strong>, изучай их роли
+          и находи персонажей, которые подходят именно тебе.
+        </p>
 
         <button onClick={handleToggleHeroesList} className={styles.button}>
           {showHeroesList ? 'Скрыть героев' : 'Показать героев'}
@@ -34,6 +37,15 @@ export default function Main() {
             value={heroSearch}
             onChange={(e) => setHeroSearch(e.target.value)}
           />
+        )}
+
+        {filteredHeroes.length < 1 && (
+          <div className={styles.emptyState}>
+            <h4 className={styles.emptyStateTitle}>Пусто</h4>
+            <p className={styles.emptyStateText}>
+              По вашему запросу ничего не найдено
+            </p>
+          </div>
         )}
 
         {showHeroesList && (
