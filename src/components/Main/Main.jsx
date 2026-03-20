@@ -34,51 +34,50 @@ export default function Main() {
         </button>
 
         {showHeroesList && (
-          <input
-            className={styles.input}
-            type="text"
-            placeholder="Введите имя героя"
-            value={heroSearch}
-            onChange={(e) => setHeroSearch(e.target.value)}
-          />
-        )}
-        {showHeroesList && (
-          <select
-            className={styles.select}
-            value={roleSearch}
-            onChange={(e) => setRoleSearch(e.target.value)}
-          >
-            <option value="All">All</option>
-            <option value="Mage">Mage</option>
-            <option value="Marksman">Marksman</option>
-            <option value="Assassin">Assassin</option>
-            <option value="Fighter">Fighter</option>
-            <option value="Tank">Tank</option>
-            <option value="Support">Support</option>
-          </select>
-        )}
+          <>
+            <input
+              className={styles.input}
+              type="text"
+              placeholder="Введите имя героя"
+              value={heroSearch}
+              onChange={(e) => setHeroSearch(e.target.value)}
+            />
 
-        {filteredHeroes.length < 1 && (
-          <div className={styles.emptyState}>
-            <h4 className={styles.emptyStateTitle}>Пусто</h4>
-            <p className={styles.emptyStateText}>
-              По вашему запросу ничего не найдено
-            </p>
-          </div>
-        )}
+            <select
+              className={styles.select}
+              value={roleSearch}
+              onChange={(e) => setRoleSearch(e.target.value)}
+            >
+              <option value="All">All</option>
+              <option value="Mage">Mage</option>
+              <option value="Marksman">Marksman</option>
+              <option value="Assassin">Assassin</option>
+              <option value="Fighter">Fighter</option>
+              <option value="Tank">Tank</option>
+              <option value="Support">Support</option>
+            </select>
 
-        {showHeroesList && (
-          <div className={styles.heroesList}>
-            {filteredHeroes.map((el) => (
-              <HeroCard
-                name={el.name}
-                role={el.role}
-                lane={el.lane}
-                img={el.img}
-                key={el.id}
-              />
-            ))}
-          </div>
+            {filteredHeroes.length > 0 ? (
+              <div className={styles.heroesList}>
+                {filteredHeroes.map((el) => (
+                  <HeroCard
+                    key={el.id}
+                    name={el.name}
+                    role={el.role}
+                    lane={el.lane}
+                    img={el.img}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className={styles.emptyState}>
+                <h4 className={styles.emptyStateTitle}>Пусто</h4>
+                <p className={styles.emptyStateText}>
+                  По вашему запросу ничего не найдено
+                </p>
+              </div>
+            )}
+          </>
         )}
       </div>
     </main>
