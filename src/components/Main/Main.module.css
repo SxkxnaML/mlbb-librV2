@@ -1,15 +1,13 @@
 .main {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .container {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 72px 20px 60px;
   text-align: center;
 }
 
@@ -31,23 +29,62 @@
 
 .button {
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 14px 28px;
   font-size: 16px;
   font-weight: 700;
   color: #0f172a;
-  background-color: #facc15;
+  background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+  box-shadow:
+    0 10px 24px rgba(250, 204, 21, 0.22),
+    0 6px 14px rgba(0, 0, 0, 0.18);
   cursor: pointer;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.select {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 16px auto 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 14px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #f8fafc;
+  background: rgba(30, 41, 59, 0.82);
+  outline: none;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
     background-color 0.2s ease;
 }
 
+.select:hover {
+  border-color: rgba(250, 204, 21, 0.35);
+  background: rgba(30, 41, 59, 0.92);
+}
+
+.select:focus {
+  border-color: rgba(250, 204, 21, 0.75);
+  background: rgba(30, 41, 59, 0.96);
+  box-shadow:
+    0 0 0 4px rgba(250, 204, 21, 0.14),
+    0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
 .button:hover {
-  background-color: #fde047;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(250, 204, 21, 0.25);
+  box-shadow:
+    0 14px 28px rgba(250, 204, 21, 0.28),
+    0 10px 18px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.03);
 }
 
 .button:active {
@@ -74,14 +111,14 @@
   max-width: 420px;
   margin: 24px auto 0;
   padding: 14px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(148, 163, 184, 0.22);
   border-radius: 14px;
   font-size: 16px;
   line-height: 1.4;
   color: #f8fafc;
-  background-color: rgba(255, 255, 255, 0.08);
+  background: rgba(30, 41, 59, 0.82);
   outline: none;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
@@ -93,16 +130,16 @@
 }
 
 .input:hover {
-  border-color: rgba(250, 204, 21, 0.45);
-  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(250, 204, 21, 0.35);
+  background: rgba(30, 41, 59, 0.92);
 }
 
 .input:focus {
-  border-color: #facc15;
-  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(250, 204, 21, 0.75);
+  background: rgba(30, 41, 59, 0.96);
   box-shadow:
-    0 0 0 4px rgba(250, 204, 21, 0.18),
-    0 10px 24px rgba(0, 0, 0, 0.2);
+    0 0 0 4px rgba(250, 204, 21, 0.14),
+    0 12px 28px rgba(0, 0, 0, 0.2);
 }
 
 .emptyState {

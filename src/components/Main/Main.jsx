@@ -8,12 +8,16 @@ export default function Main() {
 
   const [heroSearch, setHeroSearch] = useState('')
 
+  const [roleSearch, setRoleSearch] = useState('All')
+
   const handleToggleHeroesList = () => {
     setShowHeroesList((prevShowHeroesList) => !prevShowHeroesList)
   }
 
-  const filteredHeroes = heroes.filter((el) =>
-    el.name.toLowerCase().includes(heroSearch.toLowerCase()),
+  const filteredHeroes = heroes.filter(
+    (el) =>
+      el.name.toLowerCase().includes(heroSearch.toLowerCase()) &&
+      (el.role === roleSearch || roleSearch === 'All'),
   )
 
   return (
@@ -37,6 +41,21 @@ export default function Main() {
             value={heroSearch}
             onChange={(e) => setHeroSearch(e.target.value)}
           />
+        )}
+        {showHeroesList && (
+          <select
+            className={styles.select}
+            value={roleSearch}
+            onChange={(e) => setRoleSearch(e.target.value)}
+          >
+            <option value="All">All</option>
+            <option value="Mage">Mage</option>
+            <option value="Marksman">Marksman</option>
+            <option value="Assassin">Assassin</option>
+            <option value="Fighter">Fighter</option>
+            <option value="Tank">Tank</option>
+            <option value="Support">Support</option>
+          </select>
         )}
 
         {filteredHeroes.length < 1 && (

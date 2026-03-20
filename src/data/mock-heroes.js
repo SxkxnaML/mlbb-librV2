@@ -27,6 +27,13 @@ const heroes = [
     lane: 'Exp',
     img: 'heroes/pakito.jpg',
   },
+  {
+    id: 'salnik',
+    name: 'Salnik',
+    role: 'Kolbaska',
+    lane: 'Universe',
+    img: 'heroes/salnik.jpg',
+  },
 ]
 
 export default heroes

@@ -2,9 +2,15 @@
   height: 100%;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.2),
+    0 4px 10px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(6px);
   transition:
     transform 0.2s ease,
@@ -14,9 +20,11 @@
 }
 
 .heroCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
-  border-color: rgba(250, 204, 21, 0.45);
+  transform: translateY(-5px);
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.24),
+    0 8px 18px rgba(0, 0, 0, 0.14);
+  border-color: rgba(250, 204, 21, 0.4);
 }
 
 .heroImage {
@@ -28,6 +36,9 @@
 }
 
 .heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 18px 20px 20px;
 }
 
@@ -47,7 +58,11 @@
 }
 
 .heroLane {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin: 0;
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 13px;
