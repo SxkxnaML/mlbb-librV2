@@ -14,11 +14,24 @@ export default function Main() {
     setShowHeroesList((prevShowHeroesList) => !prevShowHeroesList)
   }
 
-  const filteredHeroes = heroes.filter(
-    (el) =>
-      el.name.toLowerCase().includes(heroSearch.toLowerCase()) &&
-      (el.role === roleSearch || roleSearch === 'All'),
-  )
+  const filteredHeroes = heroes.filter((hero) => {
+    const nameMatches = hero.name
+      .toLowerCase()
+      .includes(heroSearch.toLowerCase())
+    const roleMatches = hero.role === roleSearch || roleSearch === 'All'
+    return nameMatches && roleMatches
+  })
+
+  const hasFilteredHeroes = filteredHeroes.length > 0
+
+  const roleList = [
+    'All',
+    'Assassin',
+    'Marksman',
+    'Mage',
+    'Fighter',
+    'Kolbaska',
+  ]
 
   return (
     <main className={styles.main}>
@@ -48,24 +61,20 @@ export default function Main() {
               value={roleSearch}
               onChange={(e) => setRoleSearch(e.target.value)}
             >
-              <option value="All">All</option>
-              <option value="Mage">Mage</option>
-              <option value="Marksman">Marksman</option>
-              <option value="Assassin">Assassin</option>
-              <option value="Fighter">Fighter</option>
-              <option value="Tank">Tank</option>
-              <option value="Support">Support</option>
+              {roleList.map((role) => (
+                <option value={role}>{role}</option>
+              ))}
             </select>
 
-            {filteredHeroes.length > 0 ? (
+            {hasFilteredHeroes ? (
               <div className={styles.heroesList}>
-                {filteredHeroes.map((el) => (
+                {filteredHeroes.map((hero) => (
                   <HeroCard
-                    key={el.id}
-                    name={el.name}
-                    role={el.role}
-                    lane={el.lane}
-                    img={el.img}
+                    key={hero.id}
+                    name={hero.name}
+                    role={hero.role}
+                    lane={hero.lane}
+                    img={hero.img}
                   />
                 ))}
               </div>
