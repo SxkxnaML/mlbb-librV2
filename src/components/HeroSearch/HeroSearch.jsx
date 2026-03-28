@@ -1,21 +1,22 @@
 import styles from './HeroSearch.module.css'
 
+const roleList = ['All', 'Assassin', 'Marksman', 'Mage', 'Fighter', 'Kolbaska']
+
 export default function HeroSearch({
   heroSearch,
   roleSearch,
   setHeroSearch,
   setRoleSearch,
 }) {
-  const roleList = [
-    'All',
-    'Assassin',
-    'Marksman',
-    'Mage',
-    'Fighter',
-    'Kolbaska',
-  ]
+  const isResetDesabled = heroSearch === '' && roleSearch === 'All'
+
+  const handleResetFilters = () => {
+    setHeroSearch('')
+    setRoleSearch('All')
+  }
+
   return (
-    <>
+    <div className={styles.controls}>
       <input
         className={styles.input}
         type="text"
@@ -29,9 +30,19 @@ export default function HeroSearch({
         onChange={(e) => setRoleSearch(e.target.value)}
       >
         {roleList.map((role) => (
-          <option value={role}>{role}</option>
+          <option key={role} value={role}>
+            {role}
+          </option>
         ))}
       </select>
-    </>
+      <button
+        className={styles.resetButton}
+        type="button"
+        disabled={isResetDesabled}
+        onClick={handleResetFilters}
+      >
+        Сброс
+      </button>
+    </div>
   )
 }

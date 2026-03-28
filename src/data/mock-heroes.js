@@ -4,35 +4,50 @@ const heroes = [
     name: 'Hayabusa',
     role: 'Assassin',
     lane: 'Jungle',
-    img: 'heroes/hayabusa.jpg',
+    img: '/heroes/hayabusa.jpg',
+    description:
+      'Хаябуса — скрытный и смертоносный ниндзя, мастер стремительных атак и внезапных убийств. Его стиль боя строится на мобильности, точности и умении исчезать раньше, чем враг успеет ответить.',
+    difficulty: 'Hard',
   },
   {
     id: 'layla',
     name: 'Layla',
     role: 'Marksman',
     lane: 'Gold',
-    img: 'heroes/layla.jpg',
+    img: '/heroes/layla.jpg',
+    description:
+      'Лейла — стрелок с огромной дальностью атаки и высоким уроном в поздней стадии боя. Она особенно опасна на расстоянии, где может уверенно наносить урон и держать противников под постоянным давлением.',
+    difficulty: 'Easy',
   },
   {
     id: 'valentina',
     name: 'Valentina',
     role: 'Mage',
     lane: 'Mid',
-    img: 'heroes/valentina.jpg',
+    img: '/heroes/valentina.jpg',
+    description:
+      'Валентина — загадочная и могущественная магесса, способная обращать силу врагов против них самих. Её главная особенность — гибкость в бою, контроль ситуации и умение адаптироваться под любого соперника.',
+    difficulty: 'Hard',
   },
   {
     id: 'pakito',
     name: 'Pakito',
     role: 'Fighter',
     lane: 'Exp',
-    img: 'heroes/pakito.jpg',
+    img: '/heroes/pakito.jpg',
+    description:
+      'Пакито — сильный и агрессивный боец, полагающийся на скорость, серию ударов и постоянный напор. Он отлично чувствует себя в ближнем бою, где может быстро навязать темп и не оставить противнику пространства для ошибки.',
+    difficulty: 'Medium',
   },
   {
     id: 'salnik',
     name: 'Salnik',
     role: 'Kolbaska',
     lane: 'Universe',
-    img: 'heroes/salnik.jpg',
+    img: '/heroes/salnik.jpg',
+    description:
+      'Сальник — это не блюдо, а ебанутый шедевр народной кухни: жирный, мясной, сытный и настолько охуенно вкусный, что после первой вилки уже вообще похуй, как он выглядит. С виду — будто кто-то в ярости завернул мясо во всё, что нашёл, а по факту — лютая, нажористая хрень, от которой оторваться невозможно.',
+    difficulty: 'Insane',
   },
 ]
 

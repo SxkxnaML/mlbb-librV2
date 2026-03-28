@@ -1,22 +1,14 @@
 import HeroCard from '../HeroCard/HeroCard.jsx'
-import heroes from '../../data/mock-heroes.js'
 import styles from './HeroList.module.css'
 
-export default function HeroList({ heroSearch, roleSearch }) {
-  const filteredHeroes = heroes.filter((hero) => {
-    const nameMatches = hero.name
-      .toLowerCase()
-      .includes(heroSearch.toLowerCase())
-    const roleMatches = hero.role === roleSearch || roleSearch === 'All'
-    return nameMatches && roleMatches
-  })
+export default function HeroList({ heroes }) {
+  const hasFilteredHeroes = heroes.length > 0
 
-  const hasFilteredHeroes = filteredHeroes.length > 0
   return (
     <>
       {hasFilteredHeroes ? (
         <div className={styles.heroesList}>
-          {filteredHeroes.map((hero) => (
+          {heroes.map((hero) => (
             <HeroCard
               key={hero.id}
               name={hero.name}

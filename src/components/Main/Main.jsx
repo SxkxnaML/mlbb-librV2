@@ -3,6 +3,7 @@ import { useState } from 'react'
 import HeroSearch from '../HeroSearch/HeroSearch.jsx'
 import HeroList from '../HeroList/HeroList.jsx'
 import MainIntro from '../MainIntro/MainIntro.jsx'
+import heroes from '../../data/mock-heroes.js'
 
 export default function Main() {
   const [showHeroesList, setShowHeroesList] = useState(false)
@@ -10,6 +11,14 @@ export default function Main() {
   const [heroSearch, setHeroSearch] = useState('')
 
   const [roleSearch, setRoleSearch] = useState('All')
+
+  const filteredHeroes = heroes.filter((hero) => {
+    const nameMatches = hero.name
+      .toLowerCase()
+      .includes(heroSearch.toLowerCase())
+    const roleMatches = hero.role === roleSearch || roleSearch === 'All'
+    return nameMatches && roleMatches
+  })
 
   const handleToggleHeroesList = () => {
     setShowHeroesList((prevShowHeroesList) => !prevShowHeroesList)
@@ -31,7 +40,7 @@ export default function Main() {
               setHeroSearch={setHeroSearch}
               setRoleSearch={setRoleSearch}
             />
-            <HeroList heroSearch={heroSearch} roleSearch={roleSearch} />
+            <HeroList heroes={filteredHeroes} />
           </>
         )}
       </div>
