@@ -7,12 +7,19 @@ export default function HeroSearch({
   roleSearch,
   setHeroSearch,
   setRoleSearch,
+  topHeroes,
+  setTopHeroes,
 }) {
-  const isResetDesabled = heroSearch === '' && roleSearch === 'All'
+  const isResetDisabled =
+    heroSearch === '' && roleSearch === 'All' && !topHeroes
+
+  const handleToggleTopTier = () =>
+    setTopHeroes((prevTopHeroes) => !prevTopHeroes)
 
   const handleResetFilters = () => {
     setHeroSearch('')
     setRoleSearch('All')
+    setTopHeroes(false)
   }
 
   return (
@@ -38,10 +45,28 @@ export default function HeroSearch({
       <button
         className={styles.resetButton}
         type="button"
-        disabled={isResetDesabled}
+        disabled={isResetDisabled}
         onClick={handleResetFilters}
       >
         Сброс
+      </button>
+      <button
+        className={`${styles.topTierToggle} ${topHeroes ? styles.topTierToggleActive : ''}`.trim()}
+        aria-pressed={topHeroes}
+        onClick={handleToggleTopTier}
+        type="button"
+      >
+        <span className={styles.toggleText}>
+          <span className={styles.toggleLabel}>Топ герои</span>
+          <span className={styles.toggleCaption}>
+            {topHeroes
+              ? 'Показываются только топовые герои'
+              : 'Нажми, чтобы включить фильтр'}
+          </span>
+        </span>
+        <span className={styles.toggleTrack} aria-hidden="true">
+          <span className={styles.toggleThumb}></span>
+        </span>
       </button>
     </div>
   )

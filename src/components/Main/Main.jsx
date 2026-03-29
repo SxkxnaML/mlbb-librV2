@@ -12,13 +12,18 @@ export default function Main() {
 
   const [roleSearch, setRoleSearch] = useState('All')
 
+  const [openTopHeroes, setOpenTopHeroes] = useState(false)
+
   const filteredHeroes = heroes.filter((hero) => {
     const nameMatches = hero.name
       .toLowerCase()
       .includes(heroSearch.toLowerCase())
-    const roleMatches = hero.role === roleSearch || roleSearch === 'All'
-    return nameMatches && roleMatches
+    const roleMatches = hero.role.includes(roleSearch) || roleSearch === 'All'
+    const topHeroesMatches = openTopHeroes ? hero.isTopTier : true
+    return nameMatches && roleMatches && topHeroesMatches
   })
+
+ 
 
   const handleToggleHeroesList = () => {
     setShowHeroesList((prevShowHeroesList) => !prevShowHeroesList)
@@ -39,6 +44,8 @@ export default function Main() {
               roleSearch={roleSearch}
               setHeroSearch={setHeroSearch}
               setRoleSearch={setRoleSearch}
+              topHeroes={openTopHeroes}
+              setTopHeroes={setOpenTopHeroes}
             />
             <HeroList heroes={filteredHeroes} />
           </>

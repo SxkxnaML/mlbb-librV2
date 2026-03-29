@@ -1,29 +1,19 @@
 .heroCard {
   height: 100%;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  box-shadow:
-    0 10px 28px rgba(0, 0, 0, 0.2),
-    0 4px 10px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  background: #10151f;
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
 }
 
 .heroCard:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 16px 34px rgba(0, 0, 0, 0.24),
-    0 8px 18px rgba(0, 0, 0, 0.14);
-  border-color: rgba(250, 204, 21, 0.4);
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 16px 48px rgba(56, 189, 248, 0.1);
 }
 
 .heroImage {
@@ -32,45 +22,46 @@
   height: 220px;
   object-fit: cover;
   object-position: center top;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .heroContent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0;
   padding: 18px 20px 20px;
 }
 
 .heroName {
-  margin: 0 0 10px;
-  font-size: 22px;
-  font-weight: 700;
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.3;
-  color: #ffffff;
+  letter-spacing: -0.02em;
+  color: #f1f5f9;
 }
 
 .heroRole {
-  margin: 0 0 10px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #cbd5e1;
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+  font-weight: 400;
 }
 
 .heroLane {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  align-self: flex-start;
   margin: 0;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 1.2;
-  color: #f8fafc;
-  background-color: rgba(250, 204, 21, 0.18);
-  border: 1px solid rgba(250, 204, 21, 0.35);
+  line-height: 1.4;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -83,16 +74,17 @@
   }
 
   .heroName {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .heroRole {
-    font-size: 14px;
+    font-size: 13px;
+    margin-bottom: 12px;
   }
 
   .heroLane {
-    font-size: 12px;
-    padding: 5px 9px;
+    font-size: 11px;
+    padding: 4px 10px;
   }
 }
 
@@ -106,11 +98,11 @@
   }
 
   .heroName {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .heroRole {
-    margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 13px;
+    margin-bottom: 10px;
   }
 }

@@ -1,129 +1,248 @@
-.controls {
+﻿.controls {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-top: 24px;
+  gap: 14px;
+  margin-top: 28px;
 }
 
 .input,
 .select {
   display: block;
   width: 100%;
-  max-width: 420px;
-  padding: 14px 18px;
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  border-radius: 14px;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #f8fafc;
-  background: rgba(30, 41, 59, 0.82);
+  max-width: 400px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #e2e8f0;
+  background: #10151f;
   outline: none;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   transition:
     border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background-color 0.2s ease,
-    transform 0.2s ease,
-    opacity 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .select {
   cursor: pointer;
   appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 16 16' fill='%2364748b'%3E%3Cpath d='M8 12L2 6h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-color: #10151f;
+  padding-right: 38px;
 }
 
 .input::placeholder {
-  color: #94a3b8;
+  color: #475569;
 }
 
 .input:hover,
 .select:hover {
-  border-color: rgba(250, 204, 21, 0.35);
-  background: rgba(30, 41, 59, 0.92);
+  border-color: rgba(56, 189, 248, 0.25);
 }
 
 .input:focus,
 .select:focus {
-  border-color: rgba(250, 204, 21, 0.75);
-  background: rgba(30, 41, 59, 0.96);
-  box-shadow:
-    0 0 0 4px rgba(250, 204, 21, 0.14),
-    0 12px 28px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
 }
 
 .resetButton {
   width: 100%;
-  max-width: 420px;
-  padding: 14px 18px;
-  border: 1px solid rgba(250, 204, 21, 0.35);
-  border-radius: 14px;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.4;
-  color: #f8fafc;
-  background: linear-gradient(
-    180deg,
-    rgba(250, 204, 21, 0.2) 0%,
-    rgba(234, 179, 8, 0.14) 100%
-  );
-  box-shadow:
-    0 10px 24px rgba(0, 0, 0, 0.16),
-    0 4px 12px rgba(250, 204, 21, 0.08);
+  max-width: 400px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #94a3b8;
+  background: transparent;
   cursor: pointer;
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
+    color 0.2s ease,
     border-color 0.2s ease,
-    background-color 0.2s ease,
-    opacity 0.2s ease;
+    background-color 0.2s ease;
 }
 
 .resetButton:hover {
-  transform: translateY(-2px);
-  border-color: rgba(250, 204, 21, 0.6);
-  box-shadow:
-    0 14px 28px rgba(0, 0, 0, 0.18),
-    0 8px 18px rgba(250, 204, 21, 0.12);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .resetButton:active {
-  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .resetButton:disabled {
   cursor: not-allowed;
-  opacity: 0.55;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  opacity: 0.35;
+}
+
+.topTierToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #e2e8f0;
+  background: #10151f;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.topTierToggle:hover {
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.topTierToggle:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.topTierToggle:active {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.topTierToggleActive {
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.06);
+}
+
+.toggleText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  text-align: left;
+}
+
+.toggleLabel {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #f1f5f9;
+}
+
+.toggleCaption {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #64748b;
+}
+
+.topTierToggleActive .toggleCaption {
+  color: #38bdf8;
+}
+
+.toggleTrack {
+  position: relative;
+  flex-shrink: 0;
+  width: 48px;
+  height: 28px;
+  padding: 3px;
+  border: none;
+  border-radius: 999px;
+  background: #1e293b;
+  transition: background-color 0.25s ease;
+}
+
+.topTierToggleActive .toggleTrack {
+  background: #38bdf8;
+}
+
+.toggleThumb {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transform: translateX(0);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.topTierToggleActive .toggleThumb {
+  transform: translateX(20px);
+  background: #ffffff;
 }
 
 @media (max-width: 768px) {
   .controls {
-    gap: 14px;
-    margin-top: 20px;
+    gap: 12px;
+    margin-top: 24px;
   }
 
   .input,
   .select,
-  .resetButton {
+  .resetButton,
+  .topTierToggle {
     max-width: 100%;
-    padding: 13px 16px;
-    font-size: 15px;
+  }
+
+  .topTierToggle {
+    gap: 14px;
+    padding: 12px 16px;
+  }
+
+  .toggleLabel {
+    font-size: 14px;
+  }
+
+  .toggleCaption {
+    font-size: 11.5px;
+  }
+
+  .toggleTrack {
+    width: 44px;
+    height: 26px;
+  }
+
+  .toggleThumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  .topTierToggleActive .toggleThumb {
+    transform: translateX(18px);
   }
 }
 
 @media (max-width: 480px) {
   .controls {
-    gap: 12px;
-    margin-top: 18px;
+    gap: 10px;
+    margin-top: 20px;
   }
 
   .input,
   .select,
-  .resetButton {
-    padding: 12px 14px;
-    border-radius: 12px;
+  .resetButton,
+  .topTierToggle {
+    padding: 11px 14px;
+    border-radius: 8px;
     font-size: 14px;
+  }
+
+  .topTierToggle {
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .toggleLabel {
+    font-size: 13px;
+  }
+
+  .toggleCaption {
+    font-size: 11px;
   }
 }
